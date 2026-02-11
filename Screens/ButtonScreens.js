@@ -1,35 +1,51 @@
 import React from "react";
-import {View,Text,StyleSheet,Button,TouchabableOpacity, TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 
-const ButtonScreen = () =>{
-    let counter=0;
-    return(
-        <View>
-            <Text></Text>
-            <Button title="Click me" onPress={() => console.log("Buitton Clicked this many time!",counter++)}/>
+const ButtonScreen = () => {
+    let counter = 0;
 
-            <TouchableOpacity style={styles.touchableButton} onPress={()=>console.log("Buitton Clicked!!")}>
-                <Text>This is a clickable</Text>
+    return (
+        <View style={styles.container}>
+            <Text style={styles.textStyle}>Button Screen</Text>
+
+            <Button
+                title="Click me"
+                onPress={() =>
+                    console.log("Button Clicked this many times!", counter++)
+                }
+            />
+
+            <TouchableOpacity
+                style={styles.touchableButton}
+                onPress={() => console.log("Touchable Button Clicked!!")}
+            >
+                <Text style={{ color: "white", textAlign: "center" }}>
+                    This is a clickable
+                </Text>
             </TouchableOpacity>
-
-
         </View>
     );
 };
 
-const styles=StyleSheet.create({
-    textStyle:{
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    textStyle: {
         textAlign: "center",
         marginTop: 10,
         fontSize: 15,
-        marginButton:10,
+        marginBottom: 10,
     },
-    touchableButton:{
+    touchableButton: {
         backgroundColor: "purple",
-        marginVertical:15,
-        paddingVertical:20,
-        borderRadius:6,
-        marginHorizontal:20,
-    }
+        marginVertical: 15,
+        paddingVertical: 20,
+        borderRadius: 6,
+        marginHorizontal: 20,
+    },
 });
+
 export default ButtonScreen;
