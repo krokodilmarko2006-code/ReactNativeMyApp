@@ -1,10 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import ButtonScreen from "./Screens/ButtonScreens";
-import MainScreen from "./Screens/MainScreen";
-import ExerciseScreen from "./Screens/ExerciseScreen";
-import MenuScreen from "./Screens/MenuScreen";
-import StudentScreen from "./Screens/StudentScreen";
+import MainScreen from "./src/Screens/MainScreen";
+import ExerciseScreen from "./src/Screens/ExerciseScreen";
+import ListScreen from "./src/Screens/ListScreen";
+import ButtonScreen from "./src/Screens/ButtonScreen";
+import MenuScreen from "./src/Screens/MenuScreen";
+import StudentsScreen from "./src/Screens/StudentsScreen";
 
 const Stack = createStackNavigator();
 
@@ -14,8 +15,10 @@ export default function App() {
       <Stack.Navigator initialRouteName="Menu">
         <Stack.Screen name="Home" component={MainScreen} />
         <Stack.Screen name="Button" component={ButtonScreen} />
-        <Stack.Screen name="List" component={ExerciseScreen} />
-        <Stack.Screen name="Students" component={StudentScreen} />
+        <Stack.Screen name="List" component={ListScreen} />
+        <Stack.Screen name="Exercise" component={ExerciseScreen} />
+        <Stack.Screen name="Menu" component={MenuScreen} />
+        <Stack.Screen name="Students" component={StudentsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
